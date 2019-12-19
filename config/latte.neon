@@ -1,0 +1,6 @@
+services:
+	nette.latteFactory:
+		setup:
+			- addFilter('czechMonth', [@czechMonthFilter, 'process'])
+			- addFilter('email', [@emailFilter, 'process'])
+			- addFilter('mtime', [@mtimeFilter, 'process'])

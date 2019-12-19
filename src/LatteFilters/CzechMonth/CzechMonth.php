@@ -6,7 +6,7 @@ use Nette\SmartObject;
 use Wavevision\DIServiceAnnotation\DIService;
 
 /**
- * @DIService(generateInject=true)
+ * @DIService(generateInject=true, name="czechMonthFilter")
  */
 class CzechMonth
 {
