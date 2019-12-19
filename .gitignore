@@ -1,0 +1,6 @@
+/vendor/
+/temp/
+/.idea/**
+!/.idea/codeStyles/
+!/.idea/codeStyles/codeStyleConfig.xml
+!/.idea/codeStyles/Project.xml

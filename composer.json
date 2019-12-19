@@ -1,0 +1,52 @@
+{
+  "name": "wavevision/latte-filters",
+  "description": "whatever",
+  "type": "library",
+  "license": "MIT",
+  "config": {
+    "platform": {
+      "php": "7.4"
+    }
+  },
+  "autoload": {
+    "psr-4": {
+      "Wavevision\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Wavevision\\": "tests"
+    }
+  },
+  "authors": [
+    {
+      "name": "Wavevision s.r.o.",
+      "email": "info@wavevision.com"
+    },
+    {
+      "name": "Jakub Filla",
+      "email": "jakub.filla@wavevision.com"
+    },
+    {
+      "name": "Vít Rozsíval",
+      "email": "vit@wavevision.com"
+    }
+  ],
+  "require": {
+    "nette/http": "^3.0",
+    "php": ">=7.4"
+  },
+  "require-dev": {
+    "jakub-onderka/php-parallel-lint": "^1.0",
+    "phing/phing": "^3.0.0a3",
+    "php-coveralls/php-coveralls": "^2.1",
+    "phpstan/phpstan": "^0.12.3",
+    "phpunit/phpunit": "^8.5",
+    "wavevision/coding-standard": "^2.1",
+    "wavevision/di-service-annotation": "^3.0",
+    "wavevision/nette-tests": "^2.2"
+  },
+  "scripts": {
+    "phing": "phing"
+  }
+}
