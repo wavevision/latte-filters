@@ -17,13 +17,13 @@ composer require wavevision/latte-filters
 
 ## Contents
 
-- [CzechMonth](./src/LatteFilters/CzechMonth/CzechMonth.php) – render translated months to Czech (incl. inflected version)
+- [CzechMonth](./src/LatteFilters/CzechMonth/CzechMonth.php) – render months translated to Czech (incl. inflected version)
 - [Email](./src/LatteFilters/Email/Email.php) – render [ProtectedEmail](./src/LatteFilters/Email/ProtectedEmail.php) addresses (HEX encoded)
 - [Mtime](./src/LatteFilters/Mtime/Mtime.php) – render filenames with timestamp appeneded to bust caches
 
 ## Usage
 
-To use all filters simply include `common.neon` from this package in your project config:
+To use all filters, simply include `common.neon` from this package in your project config:
 
 ```neon
 includes:
