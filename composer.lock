@@ -4,8 +4,111 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b4e4d033c7d3a2ebe6e7b6b705ca7e9b",
+    "content-hash": "9575eb3eb562d0f527964105faac6bcd",
     "packages": [
+        {
+            "name": "flow/jsonpath",
+            "version": "0.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FlowCommunications/JSONPath.git",
+                "reference": "f0222818d5c938e4ab668ab2e2c079bd51a27112"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FlowCommunications/JSONPath/zipball/f0222818d5c938e4ab668ab2e2c079bd51a27112",
+                "reference": "f0222818d5c938e4ab668ab2e2c079bd51a27112",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "peekmo/jsonpath": "dev-master",
+                "phpunit/phpunit": "^4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Flow\\JSONPath": "src/",
+                    "Flow\\JSONPath\\Test": "tests/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Stephen Frank",
+                    "email": "stephen@flowsa.com"
+                }
+            ],
+            "description": "JSONPath implementation for parsing, searching and flattening arrays",
+            "time": "2018-03-04T16:39:47+00:00"
+        },
+        {
+            "name": "nette/finder",
+            "version": "v2.5.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nette/finder.git",
+                "reference": "14164e1ddd69e9c5f627ff82a10874b3f5bba5fe"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nette/finder/zipball/14164e1ddd69e9c5f627ff82a10874b3f5bba5fe",
+                "reference": "14164e1ddd69e9c5f627ff82a10874b3f5bba5fe",
+                "shasum": ""
+            },
+            "require": {
+                "nette/utils": "^2.4 || ~3.0.0",
+                "php": ">=7.1"
+            },
+            "conflict": {
+                "nette/nette": "<2.2"
+            },
+            "require-dev": {
+                "nette/tester": "^2.0",
+                "tracy/tracy": "^2.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.5-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause",
+                "GPL-2.0",
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "David Grudl",
+                    "homepage": "https://davidgrudl.com"
+                },
+                {
+                    "name": "Nette Community",
+                    "homepage": "https://nette.org/contributors"
+                }
+            ],
+            "description": "🔍 Nette Finder: find files and directories with an intuitive API.",
+            "homepage": "https://nette.org",
+            "keywords": [
+                "filesystem",
+                "glob",
+                "iterator",
+                "nette"
+            ],
+            "time": "2019-07-11T18:02:17+00:00"
+        },
         {
             "name": "nette/http",
             "version": "v3.0.3",
@@ -154,6 +257,65 @@
                 "validation"
             ],
             "time": "2019-10-21T20:40:16+00:00"
+        },
+        {
+            "name": "wavevision/utils",
+            "version": "1.12.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wavevision/utils.git",
+                "reference": "df51faf043e44a7130a4572c086b8befd83e7f64"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wavevision/utils/zipball/df51faf043e44a7130a4572c086b8befd83e7f64",
+                "reference": "df51faf043e44a7130a4572c086b8befd83e7f64",
+                "shasum": ""
+            },
+            "require": {
+                "ext-iconv": "*",
+                "flow/jsonpath": "^0.4.0",
+                "nette/finder": "^2.5",
+                "nette/utils": "^3.0",
+                "php": ">=7.2"
+            },
+            "require-dev": {
+                "jakub-onderka/php-parallel-lint": "^1.0",
+                "mikey179/vfsstream": "^1.6",
+                "phing/phing": "^2.16",
+                "php-coveralls/php-coveralls": "^2.1",
+                "php-mock/php-mock-mockery": "^1.3",
+                "php-mock/php-mock-phpunit": "^2.4",
+                "phpstan/phpstan": "^0.10",
+                "phpunit/phpunit": "^8.3",
+                "wavevision/coding-standard": "^1.1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Wavevision\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Wavevision s.r.o.",
+                    "email": "info@wavevision.com"
+                },
+                {
+                    "name": "Jakub Filla",
+                    "email": "jakub.filla@wavevision.com"
+                },
+                {
+                    "name": "Vít Rozsíval",
+                    "email": "vit@wavevision.com"
+                }
+            ],
+            "description": "Useful PHP utilities and helpers.",
+            "time": "2019-12-11T15:51:04+00:00"
         }
     ],
     "packages-dev": [
@@ -342,47 +504,6 @@
                 "php"
             ],
             "time": "2019-10-30T14:39:59+00:00"
-        },
-        {
-            "name": "flow/jsonpath",
-            "version": "0.4.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/FlowCommunications/JSONPath.git",
-                "reference": "f0222818d5c938e4ab668ab2e2c079bd51a27112"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/FlowCommunications/JSONPath/zipball/f0222818d5c938e4ab668ab2e2c079bd51a27112",
-                "reference": "f0222818d5c938e4ab668ab2e2c079bd51a27112",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.4.0"
-            },
-            "require-dev": {
-                "peekmo/jsonpath": "dev-master",
-                "phpunit/phpunit": "^4.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Flow\\JSONPath": "src/",
-                    "Flow\\JSONPath\\Test": "tests/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Stephen Frank",
-                    "email": "stephen@flowsa.com"
-                }
-            ],
-            "description": "JSONPath implementation for parsing, searching and flattening arrays",
-            "time": "2018-03-04T16:39:47+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -1144,68 +1265,6 @@
                 "static"
             ],
             "time": "2019-08-07T12:11:33+00:00"
-        },
-        {
-            "name": "nette/finder",
-            "version": "v2.5.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/nette/finder.git",
-                "reference": "14164e1ddd69e9c5f627ff82a10874b3f5bba5fe"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/nette/finder/zipball/14164e1ddd69e9c5f627ff82a10874b3f5bba5fe",
-                "reference": "14164e1ddd69e9c5f627ff82a10874b3f5bba5fe",
-                "shasum": ""
-            },
-            "require": {
-                "nette/utils": "^2.4 || ~3.0.0",
-                "php": ">=7.1"
-            },
-            "conflict": {
-                "nette/nette": "<2.2"
-            },
-            "require-dev": {
-                "nette/tester": "^2.0",
-                "tracy/tracy": "^2.3"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.5-dev"
-                }
-            },
-            "autoload": {
-                "classmap": [
-                    "src/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause",
-                "GPL-2.0",
-                "GPL-3.0"
-            ],
-            "authors": [
-                {
-                    "name": "David Grudl",
-                    "homepage": "https://davidgrudl.com"
-                },
-                {
-                    "name": "Nette Community",
-                    "homepage": "https://nette.org/contributors"
-                }
-            ],
-            "description": "🔍 Nette Finder: find files and directories with an intuitive API.",
-            "homepage": "https://nette.org",
-            "keywords": [
-                "filesystem",
-                "glob",
-                "iterator",
-                "nette"
-            ],
-            "time": "2019-07-11T18:02:17+00:00"
         },
         {
             "name": "nette/forms",
@@ -4267,65 +4326,6 @@
             ],
             "description": "PHPUnit extension for testing Nette applications.",
             "time": "2019-11-27T15:40:07+00:00"
-        },
-        {
-            "name": "wavevision/utils",
-            "version": "1.12.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/wavevision/utils.git",
-                "reference": "df51faf043e44a7130a4572c086b8befd83e7f64"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/wavevision/utils/zipball/df51faf043e44a7130a4572c086b8befd83e7f64",
-                "reference": "df51faf043e44a7130a4572c086b8befd83e7f64",
-                "shasum": ""
-            },
-            "require": {
-                "ext-iconv": "*",
-                "flow/jsonpath": "^0.4.0",
-                "nette/finder": "^2.5",
-                "nette/utils": "^3.0",
-                "php": ">=7.2"
-            },
-            "require-dev": {
-                "jakub-onderka/php-parallel-lint": "^1.0",
-                "mikey179/vfsstream": "^1.6",
-                "phing/phing": "^2.16",
-                "php-coveralls/php-coveralls": "^2.1",
-                "php-mock/php-mock-mockery": "^1.3",
-                "php-mock/php-mock-phpunit": "^2.4",
-                "phpstan/phpstan": "^0.10",
-                "phpunit/phpunit": "^8.3",
-                "wavevision/coding-standard": "^1.1.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Wavevision\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Wavevision s.r.o.",
-                    "email": "info@wavevision.com"
-                },
-                {
-                    "name": "Jakub Filla",
-                    "email": "jakub.filla@wavevision.com"
-                },
-                {
-                    "name": "Vít Rozsíval",
-                    "email": "vit@wavevision.com"
-                }
-            ],
-            "description": "Useful PHP utilities and helpers.",
-            "time": "2019-12-11T15:51:04+00:00"
         },
         {
             "name": "webmozart/assert",
