@@ -6,7 +6,7 @@ use Nette\SmartObject;
 use Wavevision\DIServiceAnnotation\DIService;
 
 /**
- * @DIService(generateInject=true, name="emailFilter")
+ * @DIService(generateInject=true)
  */
 class Email
 {

@@ -9,7 +9,7 @@ use Wavevision\DIServiceAnnotation\DIService;
 use Wavevision\Utils\Path;
 
 /**
- * @DIService(generateInject=true, params={"%wwwDir%"}, name="mtimeFilter")
+ * @DIService(generateInject=true, params={"%wwwDir%"})
  */
 class Mtime
 {

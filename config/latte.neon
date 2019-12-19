@@ -1,6 +1,6 @@
 services:
 	nette.latteFactory:
 		setup:
-			- addFilter('czechMonth', [@czechMonthFilter, 'process'])
-			- addFilter('email', [@emailFilter, 'process'])
-			- addFilter('mtime', [@mtimeFilter, 'process'])
+			- addFilter('czechMonth', [@Wavevision\LatteFilters\CzechMonth\CzechMonth, 'process'])
+			- addFilter('email', [@Wavevision\LatteFilters\Email\Email, 'process'])
+			- addFilter('mtime', [@Wavevision\LatteFilters\Mtime\Mtime, 'process'])
