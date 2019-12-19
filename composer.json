@@ -1,6 +1,6 @@
 {
   "name": "wavevision/latte-filters",
-  "description": "whatever",
+  "description": "Extra filters for Latte template engine.",
   "type": "library",
   "license": "MIT",
   "config": {
