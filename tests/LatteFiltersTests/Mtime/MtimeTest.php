@@ -16,9 +16,9 @@ class MtimeTest extends TestCase
 	public function testWithBasePath(): void
 	{
 		$this->createMtime('/path/to/repo/');
-		$this->assertEquals('nested/style.css?v=1576761307', $this->mtime->process('nested/style.css'));
-		$this->assertEquals(
-			'/path/to/repo/nested/style.css?v=1576761307',
+		$this->assertRegExp('/nested\/style.css\?v=[0-9]+/', $this->mtime->process('nested/style.css'));
+		$this->assertRegExp(
+			'/\/path\/to\/repo\/nested\/style.css\?v=[0-9]+/',
 			$this->mtime->process('/path/to/repo/nested/style.css')
 		);
 	}
@@ -26,7 +26,7 @@ class MtimeTest extends TestCase
 	public function testWithoutBasePath(): void
 	{
 		$this->createMtime('/');
-		$this->assertEquals('nested/style.css?v=1576761307', $this->mtime->process('nested/style.css'));
+		$this->assertRegExp('/nested\/style.css\?v=[0-9]+/', $this->mtime->process('nested/style.css'));
 	}
 
 	private function createMtime(string $basePath): Mtime
