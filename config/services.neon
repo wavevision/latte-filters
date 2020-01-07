@@ -1,9 +1,9 @@
-# generated file do not modify directly
+# Generated file, do not modify directly!
 services:
 	- factory: Wavevision\LatteFilters\CzechMonth\CzechMonth
-	  inject: on
+	  inject: true
 	- factory: Wavevision\LatteFilters\Email\Email
-	  inject: on
+	  inject: true
 	- factory: Wavevision\LatteFilters\Mtime\Mtime
 	  arguments: [%wwwDir%]
-	  inject: on
+	  inject: true
