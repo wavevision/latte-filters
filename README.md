@@ -28,7 +28,7 @@ To use all filters, simply include `common.neon` from this package in your proje
 
 ```neon
 includes:
-  - vendor/wavevision/latte-filters/config/common.neon
+  - %vendorDir%/wavevision/latte-filters/config/common.neon
 ```
 
 Alternatively, you can register only wanted filters separately, e.g.:
