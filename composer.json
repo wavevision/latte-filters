@@ -34,21 +34,14 @@
     }
   ],
   "require": {
-    "nette/http": "^3.0",
     "php": ">=7.4",
+    "nette/http": "^3.0",
     "wavevision/utils": "^2.1"
   },
   "require-dev": {
-    "jakub-onderka/php-parallel-lint": "^1.0",
-    "phing/phing": "^3.0.0a3",
     "php-coveralls/php-coveralls": "^2.1",
-    "phpstan/phpstan": "^0.12.3",
-    "phpunit/phpunit": "^8.5",
-    "wavevision/coding-standard": "^3.1",
-    "wavevision/di-service-annotation": "^3.0",
-    "wavevision/nette-tests": "^2.2"
-  },
-  "scripts": {
-    "phing": "phing"
+    "wavevision/coding-standard": "^5.2",
+    "wavevision/di-service-annotation": "^4.0",
+    "wavevision/nette-tests": "^3.1"
   }
 }
