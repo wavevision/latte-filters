@@ -7,6 +7,7 @@ use Nette\SmartObject;
 use Nette\Utils\Strings;
 use Wavevision\DIServiceAnnotation\DIService;
 use Wavevision\Utils\Path;
+use function filemtime;
 
 /**
  * @DIService(generateInject=true, params={"%wwwDir%"})

@@ -3,6 +3,12 @@
 namespace Wavevision\LatteFilters\Email;
 
 use Nette\SmartObject;
+use function dechex;
+use function ord;
+use function sprintf;
+use function str_repeat;
+use function strlen;
+use function strtoupper;
 
 class ProtectedEmail
 {
@@ -34,11 +40,6 @@ class ProtectedEmail
 		return $this->text;
 	}
 
-	public function __toString(): string
-	{
-		return sprintf('<a href="%s">%s</a>', $this->getHref(), $this->getText());
-	}
-
 	private function encode(string $ascii): string
 	{
 		$hexadecimal = '';
@@ -48,6 +49,11 @@ class ProtectedEmail
 			$hexadecimal .= '&#x' . $byte . ';';
 		}
 		return $hexadecimal;
+	}
+
+	public function __toString(): string
+	{
+		return sprintf('<a href="%s">%s</a>', $this->getHref(), $this->getText());
 	}
 
 }
