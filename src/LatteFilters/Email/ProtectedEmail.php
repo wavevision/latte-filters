@@ -3,7 +3,9 @@
 namespace Wavevision\LatteFilters\Email;
 
 use Nette\SmartObject;
+use Wavevision\Utils\Arrays;
 use function dechex;
+use function implode;
 use function ord;
 use function sprintf;
 use function str_repeat;
@@ -19,10 +21,16 @@ class ProtectedEmail
 
 	private string $email;
 
+	/**
+	 * @var array<string, string>
+	 */
+	private array $attributes;
+
 	public function __construct(string $email, ?string $text = null)
 	{
 		$this->email = $this->encode($email);
 		$this->text = $this->encode($text ?? $email);
+		$this->attributes = [];
 	}
 
 	public function getHref(): string
@@ -40,6 +48,29 @@ class ProtectedEmail
 		return $this->text;
 	}
 
+	public function addAttribute(string $attribute, string $value): self
+	{
+		$this->attributes[$attribute] = $value;
+		return $this;
+	}
+
+	/**
+	 * @return array<string, string>
+	 */
+	public function getAttributes(): array
+	{
+		return $this->attributes;
+	}
+
+	/**
+	 * @param array<string, string> $attributes
+	 */
+	public function setAttributes(array $attributes): self
+	{
+		$this->attributes = $attributes;
+		return $this;
+	}
+
 	private function encode(string $ascii): string
 	{
 		$hexadecimal = '';
@@ -51,9 +82,20 @@ class ProtectedEmail
 		return $hexadecimal;
 	}
 
+	private function formatAttributes(): string
+	{
+		return implode(
+			'',
+			Arrays::mapWithKeys(
+				$this->getAttributes(),
+				fn(string $attr, string $value): array => [$attr, sprintf(' %s="%s"', $attr, $value)]
+			)
+		);
+	}
+
 	public function __toString(): string
 	{
-		return sprintf('<a href="%s">%s</a>', $this->getHref(), $this->getText());
+		return sprintf('<a href="%s"%s>%s</a>', $this->getHref(), $this->formatAttributes(), $this->getText());
 	}
 
 }

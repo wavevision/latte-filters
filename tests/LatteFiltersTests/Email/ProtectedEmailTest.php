@@ -16,4 +16,15 @@ class ProtectedEmailTest extends TestCase
 		);
 	}
 
+	public function testAttributes(): void
+	{
+		$email = new ProtectedEmail('a', 'b');
+		$email->addAttribute('class', 'class');
+		$email->addAttribute('target', '_blank');
+		$this->assertEquals(
+			'<a href="&#x6D;&#x61;&#x69;&#x6C;&#x74;&#x6F;&#x3A;&#x61;" class="class" target="_blank">&#x62;</a>',
+			(string)$email
+		);
+	}
+
 }

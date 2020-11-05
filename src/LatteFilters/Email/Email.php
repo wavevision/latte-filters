@@ -13,9 +13,12 @@ class Email
 
 	use SmartObject;
 
-	public function process(string $email, ?string $text = null): ProtectedEmail
+	/**
+	 * @param array<string, string> $attributes
+	 */
+	public function process(string $email, ?string $text = null, array $attributes = []): ProtectedEmail
 	{
-		return new ProtectedEmail($email, $text);
+		return (new ProtectedEmail($email, $text))->setAttributes($attributes);
 	}
 
 }
