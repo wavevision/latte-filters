@@ -29,7 +29,7 @@ class ProtectedEmail
 	public function __construct(string $email, ?string $text = null)
 	{
 		$this->email = $this->encode($email);
-		$this->text = $this->encode($text ?? $email);
+		$this->text = $text ? $this->encode($text) : $this->getEmail();
 		$this->attributes = [];
 	}
 
@@ -71,31 +71,31 @@ class ProtectedEmail
 		return $this;
 	}
 
-	private function encode(string $ascii): string
+	private function encode(string $s): string
 	{
-		$hexadecimal = '';
-		for ($i = 0; $i < strlen($ascii); $i++) {
-			$byte = strtoupper(dechex(ord($ascii[$i])));
-			$byte = str_repeat('0', 2 - strlen($byte)) . $byte;
-			$hexadecimal .= '&#x' . $byte . ';';
+		$hex = '';
+		for ($i = 0; $i < strlen($s); $i++) {
+			$ascii = strtoupper(dechex(ord($s[$i])));
+			$byte = str_repeat('0', 2 - strlen($ascii)) . $ascii;
+			$hex .= "&#x$byte;";
 		}
-		return $hexadecimal;
+		return $hex;
 	}
 
 	private function formatAttributes(): string
 	{
 		return implode(
-			'',
+			' ',
 			Arrays::mapWithKeys(
-				$this->getAttributes(),
-				fn(string $attr, string $value): array => [$attr, sprintf(' %s="%s"', $attr, $value)]
+				Arrays::mergeAllRecursive($this->getAttributes(), ['href' => $this->getHref()]),
+				fn(string $attr, string $value): array => [$attr, sprintf('%s="%s"', $attr, $value)]
 			)
 		);
 	}
 
 	public function __toString(): string
 	{
-		return sprintf('<a href="%s"%s>%s</a>', $this->getHref(), $this->formatAttributes(), $this->getText());
+		return sprintf('<a %s>%s</a>', $this->formatAttributes(), $this->getText());
 	}
 
 }
