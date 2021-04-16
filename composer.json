@@ -4,9 +4,6 @@
   "type": "library",
   "license": "MIT",
   "config": {
-    "platform": {
-      "php": "7.4"
-    },
     "sort-packages": true
   },
   "autoload": {
@@ -40,7 +37,7 @@
   },
   "require-dev": {
     "php-coveralls/php-coveralls": "^2.1",
-    "wavevision/coding-standard": "^5.2",
+    "wavevision/coding-standard": "^6.0",
     "wavevision/di-service-annotation": "^4.0",
     "wavevision/nette-tests": "^3.1"
   }
