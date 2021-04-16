@@ -1,7 +1,7 @@
 <p align="center"><a href="https://github.com/wavevision"><img alt="Wavevision s.r.o." src="https://wavevision.com/images/wavevision-logo.png" width="120" /></a></p>
 <h1 align="center">Latte Filters</h1>
 
-[![Build Status](https://travis-ci.org/wavevision/latte-filters.svg?branch=master)](https://travis-ci.org/wavevision/latte-filters)
+[![CI](https://github.com/wavevision/latte-filters/workflows/CI/badge.svg)](https://github.com/wavevision/latte-filters/actions/workflows/ci.yml)
 [![Coverage Status](https://coveralls.io/repos/github/wavevision/latte-filters/badge.svg?branch=master&service=github)](https://coveralls.io/github/wavevision/latte-filters?branch=master)
 [![PHPStan](https://img.shields.io/badge/style-level%20max-brightgreen.svg?label=phpstan)](https://github.com/phpstan/phpstan)
 
@@ -36,7 +36,7 @@ Alternatively, you can register only wanted filters separately, e.g.:
 ```neon
 services:
   - Wavevision\LatteFilters\CzechMonth\CzechMonth
-  
+
   nette.latteFactory:
     setup:
       - addFilter('czechMonth', [@Wavevision\LatteFilters\CzechMonth\CzechMonth, 'process'])
